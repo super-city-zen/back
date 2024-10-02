@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=dbcityzen'
+      - 'MYSQL_PASSWORD=trtehteteh'
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_USER=swino'
+    ports:
+      - '3306'
