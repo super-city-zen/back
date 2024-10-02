@@ -1,6 +1,7 @@
 package com.cityzen.supercityzen.entity;
 
 import com.cityzen.supercityzen.util.Roles;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -38,7 +39,6 @@ public class User {
     private String lastName;
 
     @NotBlank
-    @Pattern(regexp = "^((([!#$%&'*+\\-/=?^_`{|}~\\w])|([!#$%&'*+\\-/=?^_`{|}~\\w][!#$%&'*+\\-/=?^_`{|}~\\.\\w]{0,}[!#$%&'*+\\-/=?^_`{|}~\\w]))[@]\\w+([-.]\\w+)*\\.\\w+([-.]\\w+]*)$")
     @Column(unique = true)
     private String email;
 
@@ -47,7 +47,6 @@ public class User {
     private String address;
 
     @PastOrPresent
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private LocalDate createdAt;
 
     @NotBlank

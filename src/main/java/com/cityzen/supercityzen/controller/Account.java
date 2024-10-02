@@ -1,5 +1,6 @@
 package com.cityzen.supercityzen.controller;
 
+import com.cityzen.supercityzen.entity.Identifier;
 import com.cityzen.supercityzen.entity.User;
 import com.cityzen.supercityzen.service.AuthenticationService;
 import com.cityzen.supercityzen.service.UserService;
@@ -21,37 +22,16 @@ public class Account {
         this.authenticationService = authenticationService;
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<User> inscription(@Valid @RequestBody User user) {
-        return authenticationService;
-    }
-    @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable int id) {
-        Optional<Product> product = productService.getProductById(id);
-
-        return product.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
-    @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    @PostMapping("/register")
+    public ResponseEntity<String> inscription(@Valid @RequestBody User user) {
+       return authenticationService.register(user);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable int id, @RequestBody Product productDetails) {
-        try {
-            Product updatedProduct = productService.updateProduct(id, productDetails);
-            return ResponseEntity.ok(updatedProduct);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable int id) {
-        productService.deleteProduct(id);
-        return ResponseEntity.noContent().build();
-    }
     // Connexion
 
     // Profil
+    @GetMapping("/profil")
+    public void profil(){
+
+    }
 }

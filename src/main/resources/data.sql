@@ -1,0 +1,15 @@
+INSERT INTO identifier (login, is_used) VALUES
+                                            ('getebher', false),
+                                            ('eggrgrge', false),
+                                            ('getebher', false),
+                                            ('dqffefz', false),
+                                            ('bdgrhsb', false),
+                                            ('utbutv', false),
+                                            ('uivuetjt', false),
+                                            ('tyjyrjyr', false),
+                                            ('rtdjhtejst', false),
+                                            ('tjtjrjr', false),
+                                            ('gettjtjebher', false),
+                                            ('zrjrtjy', false),
+                                            ('ehhtezt', false),
+                                            ('rtjtyhjr', false);
